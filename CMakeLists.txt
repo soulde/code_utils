@@ -12,7 +12,7 @@ find_package(catkin REQUIRED
 
 #set(EIGEN_INCLUDE_DIR "/usr/local/include/eigen3")
 find_package(Eigen3 REQUIRED)
-find_package(OpenCV REQUIRED)
+find_package(OpenCV  3 REQUIRED)
 find_package(Ceres REQUIRED)
 
 catkin_package(
@@ -26,7 +26,8 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     ${EIGEN3_INCLUDE_DIR}
      )
-include_directories("include")
+include_directories(include/code_utils
+		include)
 
 add_library(polynomial STATIC
     src/math_utils/Polynomial.cpp)
